@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
-import MyInput from './UI/input/MyInput';
-import MyButton from './UI/button/MyButton';
+import React, { useState } from "react";
+import MyInput from "./UI/input/MyInput";
+import MyButton from "./UI/button/MyButton";
 
-function PostForm({create}) {
+function PostForm({ create }) {
   const [post, setPost] = useState({ title: "", body: "" });
 
   const addNewPost = (e) => {
@@ -11,8 +11,8 @@ function PostForm({create}) {
       ...post,
       id: Date.now(),
     };
-    create(newPost)
-    setPost({title: '', body: ''})
+    create(newPost);
+    setPost({ title: "", body: "" });
   };
 
   return (
@@ -36,4 +36,4 @@ function PostForm({create}) {
   );
 }
 
-export default PostForm
+export default PostForm;
