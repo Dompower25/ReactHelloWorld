@@ -3,6 +3,7 @@ import "./styles/App.css";
 import PostList from "./components/PostList";
 import PostFilter from "./components/PostFilter";
 import PostForm from "./components/PostForm";
+import MyModal from "./components/UI/modal/MyModal";
 
 function App() {
   const [posts, setPosts] = useState([
@@ -38,11 +39,12 @@ function App() {
 
   return (
     <div className="App">
+      <MyModal></MyModal>
       <PostForm create={createPost} />
-
       <hr style={{ margin: "15px 0" }} />
-      <PostFilter filter={filter} setFilter={setFilter} />
-
+      <PostFilter
+        filter={filter}
+        setFilter={setFilter} />
       {sortedAndSearchPosts.length !== 0 ? (
         <PostList
           remove={removePost}

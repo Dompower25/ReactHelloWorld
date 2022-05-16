@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
+import cl from './MyModal.module.css';
 
 
-function MyModal() {
+const MyModal = ({ children }) => {
   return (
-    <div className='{style.myModal}'>MyModal</div>
-  )
-}
+    <div className={[cl.myModal, cl.active].join(" ")}>
+      <div className={cl.myModalContent}>{children}</div>
+    </div>
+  );
+};
 
-export default MyModal
+export default MyModal;
